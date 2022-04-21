@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="reportpleno">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <base href="/">
+
+  <title>Reporte Pleno</title>
+  <meta name="description" content="Plataforma que permite analizar reportería desde Pleno">
+  <link rel="icon" type="image/vnd.microsoft.icon" href="img/favicon.ico">
+
+  <!-- Custom fonts for this template-->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin-2.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="vendor/pnotify/dist/pnotify.css">
+
+</head>
+
+<body class="bg-gradient-primary" id="page-top">
+  
+  
+  <div class="div_loader" id="water" style="display: none">
+    <div  class="water"></div>  
+ </div>
+   <div ng-view>
+
+   </div>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Script de AngularJS -->
+    <script src="./js/angular/angular.min.js"></script>
+    <script src="./js/angular/angular-route.min.js"></script>
+    <script src="./js/angular/angular-cookies.min.js"></script>
+    <script src="./js/angular/angular-animate.min.js"></script>
+    <script src="./js/angular/angular-sanitize.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-cookies.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-sanitize.min.js"></script> -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/danialfarid-angular-file-upload/12.2.13/ng-file-upload.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.13.5/xlsx.full.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.13.5/jszip.js"></script>
+    <script src="./js/dirPagination.js"></script>   
+    <script src="./vendor/chart.js/Chart.min.js"></script>
+    <script src="./js/angular-chart.js"></script>
+    <script src="./js/base64.js"></script>
+    <script src="./js/download.js"></script>
+    <script src="vendor/pnotify/dist/pnotify.js"></script>
+    <!-- Controllers App -->
+    
+    <script src="./controllers/data.level.js"></script>
+    <script src="./controllers/main.js"></script>
+    <script src="./controllers/home.controller.js"></script>
+    <script src="./controllers/navigation.controller.js"></script>
+    <script src="./controllers/navigation.simple.controller.js"></script>
+    <script src="./controllers/nav.header.admin.controller.js"></script>
+    <script src="./controllers/login.controller.js"></script>
+    <script src="./controllers/admin.controller.js"></script>
+    <script src="./controllers/procesadornotas.controller.js"></script>
+    <script src="./controllers/demre.controller.js"></script>
+    <script src="./controllers/demre.student.controller.js"></script>
+    <script src="./controllers/config.demre.controller.js"></script>
+    <script src="./controllers/config.demre.masivo.controller.js"></script>
+    <script src="./controllers/asignatura.controller.js"></script>
+    <script src="./controllers/util.config.js"></script>
+    <script src="./controllers/service.factory.js"></script>
+    <script src="./controllers/service.factory.js"></script>
+
+</body>
+
+</html>
+

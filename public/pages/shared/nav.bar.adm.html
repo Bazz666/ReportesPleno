@@ -1,0 +1,62 @@
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <!-- Sidebar - Brand -->
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" style="color: white;">
+      <div class="sidebar-brand-icon rotate-n-15">
+        <img src="../../img/santillana.png" style="height: 3rem;">
+      </div>
+      <div class="sidebar-brand-text mx-3">Santillana <sup>Pleno</sup> <sup>Reporte</sup></div>
+    </a>
+  
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
+  
+    <!-- Nav Item - Dashboard -->
+    <!-- <li class="nav-item">
+      <a class="nav-link" href="#/">
+        <i class="fas fa-fw fa-tachometer-alt"></i>
+        <span>Analizar Reporte</span></a>
+    </li> -->
+  
+    <!-- Divider -->
+    <!-- <hr class="sidebar-divider"> -->
+    <!-- Heading -->
+    <!-- <div class="sidebar-heading">
+      Menú usuario
+    </div> -->
+  
+    <!-- Nav Item - Pages Collapse Menu -->
+    <!-- <li class="nav-item" ng-repeat="menu in array_menu">
+      <a class="nav-link collapsed" data-toggle="collapse" data-target="#{{ menu.NOMBRE_MENU }}" aria-expanded="true"
+        aria-controls="collapsePages" style="cursor: pointer;">
+        <i class="{{ menu.ICONO }}"></i>
+        <span>{{ menu.NOMBRE_MENU }}</span>
+      </a>
+      <div id="{{menu.NOMBRE_MENU}}" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+          <a class="collapse-item" href="#{{submenu.URL_MENU}}" ng-repeat="submenu in menu.SUB_MENU"
+            style="cursor: pointer;">{{ submenu.NOMBRE_MENU }}</a>
+        </div>
+      </div>
+    </li>  -->
+    <li class="nav-item" >
+      <a class="nav-link collapsed" data-toggle="collapse" data-target="#configLogros" aria-expanded="true"
+        aria-controls="collapsePages" style="cursor: pointer;">
+        <i class=""></i>
+        <span>Configuración</span>
+      </a>
+      <div id="configLogros" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+          <a class="collapse-item" href="#/admin" 
+            style="cursor: pointer;">Niveles de logro</a>
+            <a class="collapse-item" href="#/config_demre_masivo" 
+            style="cursor: pointer;">Carga masiva DEMRE</a>
+            <a class="collapse-item" href="#/configdemre" 
+            style="cursor: pointer;">Configuraci&oacute;n DEMRE</a>
+            <a class="collapse-item" href="#/config_asignatura" 
+            style="cursor: pointer;">Agregar asignatura</a>
+        </div>
+      </div>
+    </li> 
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block">
+  </ul>

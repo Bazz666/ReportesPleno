@@ -1,0 +1,109 @@
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+  <div ng-include="sidebar.url" ></div>
+  <!-- Content Wrapper -->
+  <div id="content-wrapper" class="d-flex flex-column">
+
+    <!-- Main Content -->
+    <div id="content">
+
+              <!-- Topbar -->
+
+        <!-- ng-include nav.header.html -->
+        <div ng-include="top_nav.url" ng-controller="navHeaderAdm"></div>
+        <!-- End of Topbar -->
+
+
+      <!-- Navbar and TopBar-->
+      <!-- Begin Page Content -->
+      <div class="container-fluid">
+
+      <!-- Page Heading -->
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+          <h1 class="h3 mb-0 text-gray-800">Carga masiva</h1>
+        </div>
+        
+        
+        
+
+        <div class="card shadow mb-4">
+          <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Puntaje DEMRE</h6>
+          </div>
+          <div class="card-body">
+            <form>
+              <div class="form-group row">
+                <label for="selectLevel" class="col-sm-2 col-lg-2">Seleccionar asignatura</label>
+                <div class="col-sm-4 col-lg-4">
+                   <select id="selectLevel" class="form-control" ng-model="selectedSubject" ng-change="changeSubject()">
+                    <option value="unselected">Seleccionar asignatura</option>
+                    <option ng-repeat="subject in subjects" value="{{subject.CODE_ASIGN}}">{{ subject.ASIGNATURA }}</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputFile" class="col-sm-2 col-form-label">Archivo excel</label>
+                <div class="col-sm-10">
+                  <input type="file" ngf-select="SelectFile($file)" class="form-control-file" id="inputFile"/>
+                  <a href="../../files/Puntaje_Masivo.xlsx">Descargar plantilla</a>
+                </div>
+              </div>
+              <!-- <div class="form-group row">
+                <div class="col-sm-10">
+                  <button class="btn btn-primary" ng-click="procesarInfo()">Cargar Información</button>
+                </div> -->
+              </div>
+            </form>
+          </div>
+
+          <hr>
+
+        <div class="card shadow mb-4" ng-if="IsVisible">
+         
+          
+            <div class="card-body">
+              <div ng-if="subjectsScore.length > 0">
+                
+                <table table class="table table-bordered table-sm">
+                  <thead>
+                    
+                    <th>Cantidad preguntas</th>
+                    <th>Puntaje</th>
+                    <th>Estado</th>
+                  </thead>
+                  <tbody>
+                    <tr dir-paginate="subject in subjectsScore | itemsPerPage: contentPerPage">
+            
+                      <td>{{ subject['Cantidad Preguntas'] }}</td>
+                      <td>{{ subject['Puntaje'] }}</td>
+                      <td><span> {{ subject.status }}</span></td>
+                      
+                    </tr>
+                  </tbody>
+                </table>
+                <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)"
+                  template-url="pages/pagination.template.html"></dir-pagination-controls>
+                  <div class="text-left mb-3"> 
+                    <button class="btn btn-info btn-sm" ng-click="savePoint()"><i class="fa fa-save" aria-hidden="true"></i> Guardar</button>
+                  </div>
+              </div>
+            </div>
+          
+        </div>
+        </div>
+
+        
+      
+          
+
+      </div>
+      <!-- /.container-fluid -->
+
+    </div>
+    <!-- End of Main Content -->
+  </div>
+  <!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->

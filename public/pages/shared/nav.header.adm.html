@@ -1,0 +1,113 @@
+<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+  <!-- Sidebar Toggle (Topbar) -->
+  <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+    <i class="fa fa-bars"></i>
+  </button>
+
+  <!-- Topbar Navbar -->
+  <ul class="navbar-nav ml-auto">
+     <!-- Nav Item - User Information -->
+    <li class="nav-item dropdown no-arrow">
+      <a class="nav-link dropdown-toggle" style="cursor:pointer" id="userDropdown" role="button" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        <span class="mr-2 d-none d-lg-inline text-gray-600 small">Configuraci&oacute;n</span>
+        <img class="img-profile rounded-circle" src="../../img/conf.png">
+      </a> 
+      <!-- Dropdown - User Information -->
+      <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+        <a class="dropdown-item" style="cursor:pointer" ng-click="logout()">
+          <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+          Cerrar sesión
+        </a>  
+
+        <!-- <a class="dropdown-item" style="cursor:pointer" ng-click="logout()">
+          <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+          Cerrar sesión
+        </a> -->
+      </div>
+    </li>
+
+  </ul>
+</nav>
+
+
+
+
+
+<div class="modal fade" id="frmLevelogro" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog " role="document">
+    <div class="modal-content noBorder">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle"><strong>Configurar niveles de logro</strong></h5>
+      </div>
+      <div class="modal-body">
+        <button class="btn btn-info" style="margin-bottom: 1%;" ng-click="addLevel()"  ng-hide="objAchievementLevel.length == maxLevel">Agregar nivel</button>
+        <span ng-if="objAchievementLevel.length == maxLevel">Solo se permiten como máximo {{ maxLevel }} niveles de logro</span>
+        <table table class="table table-bordered">
+          <thead>
+            <th>Nombre nivel</th>
+            <th>Mínimo(%)</th>
+            <th>Máximo(%)</th>
+            <th></th>
+          </thead>
+          <tbody>
+            <tr ng-repeat="achLevel in objAchievementLevel">
+              <td><div contenteditable data-directive ng-model="achLevel.level">{{ achLevel.level }}</div></td>
+              <td><div contenteditable data-directive ng-model="achLevel.min">{{ achLevel.min }}</div></td>
+              <td><div contenteditable data-directive ng-model="achLevel.max">{{ achLevel.max }}</div></td>
+              <td><button class="btn btn-danger" ng-click="removeLevel(achLevel)">Eliminar</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success btnSantilla" ng-click="saveLevel()" id="btnRecoveryPassword">Guardar</button>
+        <button type="button" class="btn btn-secondary btnSantillaCancel" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="frmChangePassword" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Cambiar contraseña</h5>
+        <!-- <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button> -->
+      </div>
+      <div class="modal-body">
+        <div class="form-group row">
+          <label for="isbn" class="col-sm-4 col-form-label">Contraseña actual</label>
+          <div class="col-sm-8 input-group mb-3">
+            <input type="password" class="form-control form-control-user" id="oldPasswordTxt" placeholder="Contraseña actual"
+              ng-model="old_password">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary btn-info" type="button" onclick="return verPassword('oldPasswordTxt','oldPasswordIcon')" ><i id="oldPasswordIcon"class="fa fa-eye" aria-hidden="true" style="color: white;"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="valor" class="col-sm-4 col-form-label">Nueva contraseña</label>
+          <div class="col-sm-8 input-group mb-3">
+            <input type="password" class="form-control form-control-user" id="newPasswordTxt" placeholder="Nueva contraseña"
+              ng-model="new_password">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary btn-info" type="button" onclick="return verPassword('newPasswordTxt','newPasswordIcon')"><i id="newPasswordIcon" class="fa fa-eye" aria-hidden="true" style="color: white;"></i></button>
+          </div>
+          </div>
+        </div>
+        <hr>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" type="button" data-dismiss="modal">Cancel</button>
+        <a class="btn btn-success" ng-click="password_change(old_password,new_password)" style="color: white;"><i class="fas fa-save"></i>
+          Cambiar contraseña</a>
+      </div>
+    </div>
+  </div>
+</div>
